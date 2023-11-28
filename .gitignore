@@ -1,0 +1,55 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Virtual Environment
+venv/
+
+# Compiled Python Files
+__pycache__/
+*.pyc
+
+# Django Specific Files
+db.sqlite3
+*.log
+media/
+staticfiles/
+
+# React / Node Specific Files
+node_modules/
+build/
+.env
+
+# IDE/Editors
+.vscode/
+.idea/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Other Common Directories/Files to Ignore
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
