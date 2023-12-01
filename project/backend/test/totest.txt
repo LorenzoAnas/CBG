@@ -1,0 +1,1 @@
+Need to check why pieces can't capture enemies. Probably they are checking if the square is empty!
