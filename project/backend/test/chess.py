@@ -29,7 +29,7 @@ class Board:
         
         # Move the piece
         piece = self.pieces[source[0]][source[1]]
-        self.pieces[source[0]][source[1]] = None
+        self.pieces[source[0]][source[1]], self.pieces[destination[0]][destination[1]] = None, None
         self.pieces[destination[0]][destination[1]] = piece
 
 

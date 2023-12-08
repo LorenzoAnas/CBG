@@ -1,0 +1,22 @@
+/* src/styles/ChessGamePage.module.css */
+
+.chessGamePage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full height of the viewport */
+  width: 100%; /* Full width of the viewport */
+  align-items: center; /* Center children horizontally */
+  justify-content: flex-start; /* Align children to the top */
+}
+
+.mainContent {
+  display: flex;
+  width: 90%; /* Adjust based on your layout preferences */
+  max-width: 1200px; /* Maximum width of the main content area */
+  margin-top: 20px; /* Space below the header */
+  
+  /* Use media queries for responsive adjustments */
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}

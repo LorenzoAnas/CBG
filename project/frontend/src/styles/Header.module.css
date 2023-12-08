@@ -1,0 +1,10 @@
+/* src/styles/Header.module.css */
+
+.header {
+    background-color: #432E19; /* Slightly darker wood color for contrast */
+    color: #F1E8DF; /* Light color for text for readability */
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #3a2917; /* Border to give a separation effect */
+  }
+  

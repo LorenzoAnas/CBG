@@ -1,0 +1,9 @@
+/* src/styles/Sidebar.module.css */
+
+.sidebar {
+    background-color: #5C3A21; /* Same as chessboard for consistency */
+    color: #F1E8DF;
+    padding: 1rem;
+    min-width: 200px; /* Fixed width for sidebar */
+  }
+  
