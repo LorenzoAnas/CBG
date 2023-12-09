@@ -34,6 +34,7 @@ db.sqlite3
 *.log
 media/
 staticfiles/
+project/backend/config/settings.py
 
 # React / Node Specific Files
 node_modules/
