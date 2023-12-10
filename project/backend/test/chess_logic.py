@@ -48,6 +48,10 @@ class Board:
         if self.is_empty(source):
             return False
         
+        # Check if the destination is empty
+        if self.is_empty(destination):
+            return True
+        
         # Check if the destination is occupied by an enemy piece
         if not self.is_empty(destination) and self.get_piece(source).color != self.get_piece(destination).color:
             return True
@@ -130,6 +134,7 @@ class Board:
                 else:
                     board_str += '|' + str(piece)[0] + '  '  # Use '|P  ' for a pawn, '|R  ' for a rook, etc.
             board_str += '|\n +---+---+---+---+---+---+---+---+\n'
+        board_str += '   a   b   c   d   e   f   g   h\n'    
         return board_str
     
 # 2. Define the Chess Pieces
