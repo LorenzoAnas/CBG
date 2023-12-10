@@ -27,11 +27,13 @@ class Board:
         if not self.is_valid_move(source, destination):
             raise ValueError('Invalid move')
         
-        # Move the piece
-        piece = self.pieces[source[0]][source[1]]
-        self.pieces[source[0]][source[1]], self.pieces[destination[0]][destination[1]] = None, None
-        self.pieces[destination[0]][destination[1]] = piece
+        # If the destination is occupied by an enemy piece, capture it
+        if not self.is_empty(destination) and self.get_piece(source).color != self.get_piece(destination).color:
+            self.pieces[destination[0]][destination[1]] = None
 
+        # Move the piece to the destination
+        self.pieces[destination[0]][destination[1]] = self.pieces[source[0]][source[1]]
+        self.pieces[source[0]][source[1]] = None
 
     def is_valid_move(self, source, destination):
         # Check if the source and destination are within bounds
@@ -46,15 +48,14 @@ class Board:
         if self.is_empty(source):
             return False
         
-        # Check if the destination is occupied by a friendly piece
-        if not self.is_empty(destination) and self.get_piece(source).color == self.get_piece(destination).color:
-            return False
+        # Check if the destination is occupied by an enemy piece
+        if not self.is_empty(destination) and self.get_piece(source).color != self.get_piece(destination).color:
+            return True
         
         # Check if the move is valid for the piece
         if destination not in self.get_piece(source).get_valid_moves(self):
             return False
-        
-        
+
         return True
     
     def is_checkmate(self, color):
@@ -179,8 +180,10 @@ class Pawn(Piece):
         # Check if the pawn can capture diagonally
         for dx, dy in [(direction, -1), (direction, 1)]:
             new_position = (self.position[0] + dx, self.position[1] + dy)
-            if board.is_within_bounds(new_position) and not board.is_empty(new_position) and board.get_piece(new_position).color != self.color:
-                valid_moves.append(new_position)
+            if board.is_within_bounds(new_position):
+                piece = board.get_piece(new_position)
+                if piece is not None and piece.color != self.color:
+                    valid_moves.append(new_position)
         
         return valid_moves
     
@@ -231,7 +234,7 @@ class Rook(Piece):
                 new_position = (self.position[0] + dx * distance, self.position[1] + dy * distance)
                 
                 # If the new position is within bounds and empty, the rook can move there
-                if board.is_within_bounds(new_position) and board.is_empty(new_position):
+                if board.is_within_bounds(new_position):
                     valid_moves.append(new_position)
                 else:
                     break
@@ -259,8 +262,10 @@ class King(Piece):
             new_position = (self.position[0] + dx, self.position[1] + dy)
             
             # If the new position is within bounds and either empty or occupied by an enemy piece, the king can move there
-            if board.is_within_bounds(new_position) and (board.is_empty(new_position) or board.get_piece(new_position).color != self.color):
-                valid_moves.append(new_position)
+            if board.is_within_bounds(new_position):
+                piece = board.get_piece(new_position)
+                if piece is not None and piece.color != self.color:
+                    valid_moves.append(new_position)
         
         return valid_moves
     
@@ -286,7 +291,7 @@ class Queen(Piece):
                 new_position = (self.position[0] + dx * distance, self.position[1] + dy * distance)
                 
                 # If the new position is within bounds and empty, the queen can move there
-                if board.is_within_bounds(new_position) and board.is_empty(new_position):
+                if board.is_within_bounds(new_position):
                     valid_moves.append(new_position)
                 else:
                     break
@@ -315,7 +320,7 @@ class Bishop(Piece):
                 new_position = (self.position[0] + dx * distance, self.position[1] + dy * distance)
                 
                 # If the new position is within bounds and empty, the bishop can move there
-                if board.is_within_bounds(new_position) and board.is_empty(new_position):
+                if board.is_within_bounds(new_position):
                     valid_moves.append(new_position)
                 else:
                     break
@@ -343,8 +348,10 @@ class Knight(Piece):
             new_position = (self.position[0] + dx, self.position[1] + dy)
             
             # If the new position is within bounds and either empty or occupied by an enemy piece, the knight can move there
-            if board.is_within_bounds(new_position) and (board.is_empty(new_position) or board.get_piece(new_position).color != self.color):
-                valid_moves.append(new_position)
+            if board.is_within_bounds(new_position):
+                piece = board.get_piece(new_position)
+                if piece is not None and piece.color != self.color:
+                    valid_moves.append(new_position)
         
         return valid_moves
     

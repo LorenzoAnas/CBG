@@ -1,1 +1,3 @@
-Need to check why pieces can't capture enemies. Probably they are checking if the square is empty!
+fixed: Need to check why pieces can't capture enemies. Probably they are checking if the square is empty! 
+
+todo: Test and integrate the concept of "pinned pieces"

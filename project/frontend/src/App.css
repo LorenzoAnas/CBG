@@ -2,14 +2,14 @@
 
 .App {
   text-align: center;
-  background-color: #121212; /* Dark background for the whole app */
+  background-color: #2c1d1b; /* Dark brown background for the whole app */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #160a0c; /* Light text color for contrast */
 }
 
 /* You can add a shading effect using a pseudo-element */
@@ -20,6 +20,6 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: radial-gradient(circle at center, transparent, rgba(0, 0, 0, 0.5));
+  background: radial-gradient(circle at center, transparent, rgba(62, 39, 35, 0.5)); /* Slightly transparent dark brown radial gradient */
   pointer-events: none;
 }

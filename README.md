@@ -6,6 +6,8 @@ This project is in the ideation phase. It aims to provide a platform for users t
 ## Current Status
 - Project file structure set up for both frontend and backend.
 - Technologies identified for development.
+- Working on classical chess logic in "project/backend/test/chess_logic.py".
+- Added a react component for an empty and static 8x8 board in "project/frontend/src/components".
 
 ## Technologies
 - **Frontend**: React.js

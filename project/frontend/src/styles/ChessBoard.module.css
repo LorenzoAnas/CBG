@@ -15,9 +15,9 @@
   display: flex;
   justify-content: space-between;
   max-width: calc((8 * 90px) + (7 * 5px)); /* Add the gap space to the total width */
-  margin-top: -5px; /* Align with the grid gap */
-  padding-left: 5px; /* Align with the left edge of the grid */
-  padding-right: 5px; /* Align with the right edge of the grid */
+  margin-top: -10px; /* Align with the grid gap */
+  padding-left: 35px; /* Align with the left edge of the grid */
+  padding-right: 35px; /* Align with the right edge of the grid */
 }
 
 .coordinatesVertical {
@@ -25,7 +25,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: calc((8 * 90px) + (7 * 5px)); /* Add the gap space to the total height */
-  margin-right: -5px; /* Adjust for gap overlap */
+  margin-right: 15px; /* Adjust for gap overlap */
   padding-top: 5px; /* Align with the top edge of the grid */
   padding-bottom: 5px; /* Align with the bottom edge of the grid */
 }
