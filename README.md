@@ -7,7 +7,7 @@ This project is in the ideation phase. It aims to provide a platform for users t
 - Project file structure set up for both frontend and backend.
 - Technologies identified for development.
 - Working on classical chess logic in "project/backend/test/chess_logic.py".
-- Added a react component for an empty and static 8x8 board in "project/frontend/src/components".
+- Added a react component for a 8x8 board in "project/frontend/src/components", which allows pieces to be dragged to new squares without implementing any real chess logic.
 
 ## Technologies
 - **Frontend**: React.js
