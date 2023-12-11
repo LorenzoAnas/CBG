@@ -16,6 +16,7 @@ import knightWhite from '../assets/whitePieces/knightWhite.png';
 import pawnWhite from '../assets/whitePieces/pawnWhite.png';
 import queenWhite from '../assets/whitePieces/queenWhite.png';
 import rookWhite from '../assets/whitePieces/rookWhite.png';
+import moveSound from '../assets/sounds/moveSound.mp3';
 
 const ChessBoard = () => {
   const boardSize = 8;
@@ -46,6 +47,8 @@ const ChessBoard = () => {
     e.preventDefault();
   };
 
+  const moveSoundEffect = new Audio(moveSound);
+
   const handleDrop = (e, position) => {
     e.preventDefault();
 
@@ -57,6 +60,9 @@ const ChessBoard = () => {
     newBoardState[position.y][position.x] = piece;
 
     setBoardState(newBoardState);
+
+    // Play the sound
+    moveSoundEffect.play();
   };
 
   let squares = [];
